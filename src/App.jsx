@@ -123,6 +123,31 @@ const emptyForm = {
   project_link: "",
 };
 
+function Button({ children, className = "", ...props }) {
+  return (
+    <button
+      className={`rounded-2xl bg-black px-5 py-3 text-white transition hover:opacity-90 ${className}`}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+}
+
+function Card({ children, className = "" }) {
+  return (
+    <div
+      className={`rounded-[2rem] border border-neutral-200 bg-white shadow-sm ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
+
+function CardContent({ children, className = "" }) {
+  return <div className={className}>{children}</div>;
+}
+
 function normalizeProject(project) {
   return {
     id: project.id,
@@ -207,31 +232,6 @@ function runSelfTests() {
 }
 
 runSelfTests();
-
-function Button({ children, className = "", ...props }) {
-  return (
-    <button
-      className={`rounded-2xl bg-black px-5 py-3 text-white transition hover:opacity-90 ${className}`}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-}
-
-function Card({ children, className = "" }) {
-  return (
-    <div
-      className={`rounded-[2rem] border border-neutral-200 bg-white shadow-sm ${className}`}
-    >
-      {children}
-    </div>
-  );
-}
-
-function CardContent({ children, className = "" }) {
-  return <div className={className}>{children}</div>;
-}
 
 function IconBadge({ children, className = "" }) {
   return (
@@ -372,8 +372,8 @@ export default function VibeMakerCommunityWebMvp() {
               ✨
             </div>
             <div>
-              <p className="text-lg font-bold tracking-tight">첫배포</p>
-              <p className="text-xs text-neutral-500">Korean AI Maker Community</p>
+              <p className="text-lg font-bold tracking-tight">Ididit</p>
+              <p className="text-xs text-neutral-500">Where Korean ideas become real projects</p>
             </div>
           </div>
           <nav className="hidden items-center gap-6 text-sm text-neutral-600 md:flex">
@@ -404,17 +404,17 @@ export default function VibeMakerCommunityWebMvp() {
               <span className="block text-neutral-500">직접 만들고 공개하는 공간.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-neutral-600">
-              첫배포는 한국 청년들이 GPT, Claude, Cursor 같은 AI 도구로 만든 앱과 서비스를 올리고, 제작 과정을 공유하고, 서로 rating 하는 실행 중심 커뮤니티입니다.
+              Ididit는 한국 청년들이 GPT, Claude, Cursor 같은 AI 도구로 만든 앱과 서비스를 올리고, 제작 과정을 공유하고, 서로 rating 하는 실행 중심 커뮤니티입니다.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="#upload">
                 <Button size="lg" className="w-full rounded-2xl px-7 sm:w-auto">
-                  첫 프로젝트 올리기
+                  첫 프로젝트 공유하기
                 </Button>
               </a>
               <a href="#projects">
                 <Button size="lg" variant="outline" className="w-full rounded-2xl px-7 sm:w-auto">
-                  다른 사람의 첫 배포 보기
+                  다른 사람들의 실행 보기
                 </Button>
               </a>
             </div>
@@ -692,7 +692,7 @@ export default function VibeMakerCommunityWebMvp() {
               <p className="text-sm font-bold text-neutral-400">HOW IT WORKS</p>
               <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">이곳은 개발자 평가장이 아니라 실행 인증장입니다.</h2>
               <p className="mt-5 leading-8 text-neutral-300">
-                첫배포의 목표는 더 좋은 AI를 만드는 것이 아니라, 이미 존재하는 AI 도구를 이용해 한국 청년들이 자기 아이디어를 실제 결과물로 공개하게 만드는 것입니다.
+                Ididit의 목표는 더 좋은 AI를 만드는 것이 아니라, 이미 존재하는 AI 도구를 이용해 한국 청년들이 자기 아이디어를 실제 결과물로 공개하게 만드는 것입니다.
               </p>
             </div>
             <div className="grid gap-3">
@@ -833,7 +833,7 @@ export default function VibeMakerCommunityWebMvp() {
 
       <footer className="border-t border-neutral-200 bg-white py-8">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 px-5 text-sm text-neutral-500 md:flex-row">
-          <p>© 첫배포 — 한국 청년 AI 메이커 커뮤니티</p>
+          <p>© Ididit — 한국 청년 AI 메이커 커뮤니티</p>
           <p>공부만 하던 아이디어를, 직접 세상에 공개하는 문화.</p>
         </div>
       </footer>
