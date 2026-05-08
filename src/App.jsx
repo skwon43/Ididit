@@ -86,10 +86,19 @@ const emptyForm = {
   project_link: "",
 };
 
-function Button({ children, className = "", ...props }) {
+function Button({ children, className = "", variant = "default", size = "default", disabled = false, ...props }) {
+  const base =
+    "rounded-2xl px-5 py-3 font-medium transition disabled:cursor-not-allowed disabled:opacity-50";
+
+  const styles =
+    variant === "outline"
+      ? "border border-neutral-300 bg-white text-neutral-950 hover:bg-neutral-100"
+      : "bg-neutral-950 text-white hover:opacity-90";
+
   return (
     <button
-      className={`rounded-2xl bg-black px-5 py-3 text-white transition hover:opacity-90 ${className}`}
+      className={`${base} ${styles} ${className}`}
+      disabled={disabled}
       {...props}
     >
       {children}
